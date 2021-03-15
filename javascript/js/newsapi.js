@@ -1,11 +1,15 @@
 
 class Newsapi {
 
+    myDate = new Date()
+    currentDate =  this.myDate.getFullYear() + '-' + 
+    (this.myDate.getMonth() + 1) + '-' + this.myDate.getDate()
+
     apiKey = "4a5de1e54b304bf2909af12bf979c242"
     urlTemplate = "http://newsapi.org/v2/everything?"
     attributes =  {
         q:'tesla',
-        from:'2021-02-10',
+        from:  this.currentDate,// '2021-02-10', 
         sortBy:'publishedAt',
         apiKey:this.apiKey
     }
