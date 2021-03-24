@@ -1,0 +1,63 @@
+<h3>Hello {{ firstname }} !</h3>
+
+result: {{ 2 + 2 }} 
+<ul>
+    <li *ngFor="let car of cars; index as i;">{{ car }} - {{ i }}</li>
+</ul>
+
+<input type="text" [(ngModel)]="newCarName">
+<button (click)="fnAddNewItem(155)">Add new Item</button>
+<br><br>
+<input type="text" [value]="firstname">
+
+
+<div *ngIf="show == true;then thenTemplate else elseTemplate"> sample text</div>
+<ng-template #elseTemplate> this is else ...! </ng-template>
+<ng-template #thenTemplate> this is <span class="red">then ...!</span></ng-template>
+<button (click)="fnToggle()">Switch</button>
+
+
+<div [ngSwitch]="count">
+    <div *ngSwitchCase="1">{{ cars[1] }} output: {{ count }}</div>
+    <div *ngSwitchCase="2">{{ cars[2] }} output  {{ count }}</div>
+    <div *ngSwitchCase="0">{{ cars[0] }} output  {{ count }}</div>
+    <div *ngSwitchDefault>default output2  {{ count }}</div>
+</div>
+<button (click)="fnIncrement()">+</button>
+<button (click)="fnDecrement()">-</button>
+
+
+<hr>
+
+<div [ngClass]="fnSetStyles()"></div>
+<input type="checkbox" (change)="setSquareRed()" [checked]="isRedSquare">Red square
+<input type="checkbox" (change)="setSquareGreen()" [checked]="isGreenSquare">Green square
+
+<div [ngStyle]="{'font-size': '24px', 'color': 'green'}" >dfbxd gbfgsd</div>
+<div [style.color]="'green'" 
+[style.fontSize]="isRedSquare == true ? '50px' : '100px'"> dgbsdfgb fggb</div>
+
+From child component: {{ thisChildVariable }}
+
+
+ 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!--
+<button type="button" class="btn btn-primary"
+        tooltip="Vivamus sagittis lacus vel augue laoreet rutrum faucibus.">
+  Simple demo
+</button>
+-->
