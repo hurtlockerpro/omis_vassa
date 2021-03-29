@@ -1,0 +1,7 @@
+<h3>My ToDo!</h3>
+
+<app-todorow *ngFor="let todo of todos" [todoTitle]="todo.title" [todo]="todo"></app-todorow>
+
+<hr>
+
+<app-todoform (onInsertTodoItem)="insertTodo($event)"></app-todoform>
